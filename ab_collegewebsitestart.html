@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyramid College of Business and Technology</title>
+    <style>
+        /* Resetting default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background-image: url('background.jpg'); /* Add your background image URL here */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed; /* This keeps the background image fixed as the page scrolls */
+            padding: 20px; /* Add some padding to the body */
+        }
+
+        /* Header */
+        header {
+            background-color: rgba(0, 0, 0, 0.7); /* Change background color to semi-transparent black */
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+            margin-bottom: 20px; /* Add some spacing between header and content */
+            border-radius: 10px; /* Add border-radius for a softer look */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Navigation menu */
+        nav ul {
+            list-style-type: none;
+            text-align: center;
+            margin-top: 20px;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+            padding: 10px 20px; /* Add padding */
+            border: 2px solid #fff; /* Add border */
+            border-radius: 5px; /* Add border-radius */
+        }
+
+        nav ul li a:hover {
+            color: #f8f9fa;
+            background-color: #555; /* Change background color on hover */
+        }
+
+        /* Main content */
+        .main-content {
+            text-align: justify; /* Justify text for better readability */
+            max-width: 800px;
+            margin: 0 auto; /* Center the content */
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent grey background */
+            border-radius: 10px; /* Add some border-radius for a softer look */
+            box-shadow: 0 2px 5px rgba(24, 24, 24, 0.2); /* Add a subtle shadow for depth */
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Image slideshow */
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: 20px 0; /* Add some spacing between content and slideshow */
+        }
+
+        /* Add new @keyframes slideHorizontal */
+        @keyframes slideHorizontal {
+            from {
+                opacity: 0;
+                transform: translateX(100%);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Modify .fade class to use slideHorizontal animation */
+        .fade {
+            animation: slideHorizontal 3s infinite; /* Change duration to 3 seconds */
+            background-color: black; /* Add this line to change fade color to black */
+            border-radius: 10px; /* Add some border-radius for a softer look */
+        }
+
+        .slideshow-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px; /* Add some border-radius for a softer look */
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            animation: fadeIn 1s ease-in-out;
+            margin-top: 20px; /* Add some spacing between content and footer */
+            border-radius: 10px; /* Add some border-radius for a softer look */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a subtle shadow for depth */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pyramid College of Business and Technology</h1>
+        <nav>
+            <ul>
+                <li><a href="about.html">About</a></li> <!-- Link to about page -->
+                <li><a href="https://www.pyramidcollege.edu.in/apply-online/">Admissions</a></li> <!-- Link to admissions page -->
+                <li><a href="index.htm">Management Program</a></li> <!-- Link to academics page -->
+                
+            </ul>
+        </nav>
+    </header>
+
+    
+    <div class="slideshow-container">
+        <img class="fade" src="PCB00968.JPG" alt="Slideshow Image">
+        <img class="fade" src="PCB01019.JPG" alt="Slideshow Image">
+        <img class="fade" src="pratham.JPG" alt="Slideshow Image">
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Pyramid College of Business and Technology. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for image slideshow
+        var slideIndex = 0;
+        carousel();
+
+        function carousel() {
+            var i;
+            var x = document.getElementsByClassName("fade");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";  
+            }
+            slideIndex++;
+            if (slideIndex > x.length) {slideIndex = 1}    
+            x[slideIndex-1].style.display = "block";  
+            setTimeout(function() {
+                carousel();
+            }, 3000); // Change image every 3 seconds
+        }
+    </script>
+</body>
+</html>
